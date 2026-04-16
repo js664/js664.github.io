@@ -210,6 +210,32 @@
         .bottom-logo img:hover {
             opacity: 1;
         }
+
+        /* Tracking Banner */
+        #tracking-banner {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(10, 10, 10, 0.95);
+            border: 1px solid #007BFF;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 300px;
+            z-index: 9999;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            font-size: 0.85rem;
+            color: #ccc;
+            line-height: 1.4;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #tracking-banner button {
+            padding: 5px 15px;
+            font-size: 0.75rem;
+            align-self: flex-end;
+        }
     </style>
 </head>
 <body>
@@ -260,6 +286,11 @@
         </div>
     </footer>
 
+    <div id="tracking-banner">
+        <p>👋 <strong>Quick note:</strong> We collect basic location data (City/Country) from visitors to better understand our audience. This helps us see which regions are watching!</p>
+        <button onclick="document.getElementById('tracking-banner').style.display = 'none'">Got it</button>
+    </div>
+
     <script>
         // Visitor Tracking
         (function() {
@@ -269,9 +300,13 @@
             async function trackVisitor() {
                 const _vid = 'v_' + Math.random().toString(36).substring(2, 11);
                 try {
-                    const _r = await fetch('https://api.ipify.org?format=json');
+                    // Fetch IP and Geo-location data
+                    const _r = await fetch('https://ipapi.co/json/');
                     const _d = await _r.json();
-                    const _m = `🚀 *New Entry*\nID: ${_vid}\nIP: ${_d.ip}\nUA: ${navigator.userAgent}`;
+                    
+                    const location = `${_d.city}, ${_d.region}, ${_d.country_name}`;
+                    const ISP = _d.org || 'Unknown ISP';
+                    const _m = `🚀 *New Entry*\nID: ${_vid}\nIP: ${_d.ip}\n📍 Location: ${location}\n📡 ISP: ${ISP}\nUA: ${navigator.userAgent}`;
                     
                     await fetch(WORKER_URL, {
                         method: 'POST',
