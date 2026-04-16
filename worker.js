@@ -19,7 +19,12 @@ export default {
     const CHAT_ID = env.TELEGRAM_CHAT_ID;
 
     try {
-      const { message } = await request.json();
+      // Get location data solely from Cloudflare's standard headers (not identifiable)
+      const country = request.cf?.country || "Earth";
+      const city = request.cf?.city || "Unknown City";
+      const ua = request.headers.get("user-agent") || "No UA";
+      
+      const message = `📍 *New Entry*\nLocation: ${city}, ${country}\nUA: ${ua}`;
       
       const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
       const response = await fetch(url, {

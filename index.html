@@ -244,7 +244,7 @@
 
         <div id="terms" class="legal-section">
             <h2>Terms of Service</h2>
-            <p>By accessing this website, you agree to the following terms: This platform serves as a directory and user interface for content hosted on third-party services, including but not limited to Wistia and the Internet Archive. We do not host, store, or upload any video files to our own servers. All media playback is handled via external embeds. <strong>Data Collection Disclosure:</strong> We collect non-personal visitor information, including IP addresses, estimated geographical location (City/Country), and device user-agents for audience analytics and security purposes. By continuing to use this site, you consent to this data processing.</p>
+            <p>By accessing this website, you agree to the following terms: This platform serves as a directory and user interface for content hosted on third-party services, including but not limited to Wistia and the Internet Archive. We do not host, store, or upload any video files to our own servers. All media playback is handled via external embeds. <strong>Analytics:</strong> We use aggregated, anonymous location data (City/Country) for audience analytics. No personally identifiable information or IP addresses are stored. By using this site, you affirm you are at least 18 years of age.</p>
             <p style="margin-top: 10px;">We make no guarantees regarding the availability, accuracy, or legality of the external content linked or embedded herein. Users access this content at their own risk. We are not liable for any technical issues, data usage, or external site policies that may apply when interacting with these players.</p>
         </div>
 
@@ -261,26 +261,15 @@
     </footer>
 
     <script>
-        // Visitor Tracking
+        // Privacy-Friendly Tracking
         (function() {
-            // Secure Worker URL (Secrets are hidden in Cloudflare)
             const WORKER_URL = 'https://sidequest-tracker.jsvdbeukel.workers.dev';
             
             async function trackVisitor() {
-                const _vid = 'v_' + Math.random().toString(36).substring(2, 11);
                 try {
-                    // Fetch IP and Geo-location data
-                    const _r = await fetch('https://ipapi.co/json/');
-                    const _d = await _r.json();
-                    
-                    const location = `${_d.city}, ${_d.region}, ${_d.country_name}`;
-                    const ISP = _d.org || 'Unknown ISP';
-                    const _m = `🚀 *New Entry*\nID: ${_vid}\nIP: ${_d.ip}\n📍 Location: ${location}\n📡 ISP: ${ISP}\nUA: ${navigator.userAgent}`;
-                    
+                    // Just a ping to the worker - no personal data sent from here
                     await fetch(WORKER_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ message: _m })
+                        method: 'POST'
                     });
                 } catch (e) {}
             }
