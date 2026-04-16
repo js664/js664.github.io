@@ -33,6 +33,7 @@ export default {
       });
 
       const result = await response.json();
+
       return new Response(JSON.stringify(result), {
         headers: { 
           "Content-Type": "application/json",
