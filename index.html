@@ -210,32 +210,6 @@
         .bottom-logo img:hover {
             opacity: 1;
         }
-
-        /* Tracking Banner */
-        #tracking-banner {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(10, 10, 10, 0.95);
-            border: 1px solid #007BFF;
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 300px;
-            z-index: 9999;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            font-size: 0.85rem;
-            color: #ccc;
-            line-height: 1.4;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        #tracking-banner button {
-            padding: 5px 15px;
-            font-size: 0.75rem;
-            align-self: flex-end;
-        }
     </style>
 </head>
 <body>
@@ -270,7 +244,7 @@
 
         <div id="terms" class="legal-section">
             <h2>Terms of Service</h2>
-            <p>By accessing this website, you agree to the following terms: This platform serves as a directory and user interface for content hosted on third-party services, including but not limited to Wistia and the Internet Archive. We do not host, store, or upload any video files to our own servers. All media playback is handled via external embeds.</p>
+            <p>By accessing this website, you agree to the following terms: This platform serves as a directory and user interface for content hosted on third-party services, including but not limited to Wistia and the Internet Archive. We do not host, store, or upload any video files to our own servers. All media playback is handled via external embeds. <strong>Data Collection Disclosure:</strong> We collect non-personal visitor information, including IP addresses, estimated geographical location (City/Country), and device user-agents for audience analytics and security purposes. By continuing to use this site, you consent to this data processing.</p>
             <p style="margin-top: 10px;">We make no guarantees regarding the availability, accuracy, or legality of the external content linked or embedded herein. Users access this content at their own risk. We are not liable for any technical issues, data usage, or external site policies that may apply when interacting with these players.</p>
         </div>
 
@@ -285,11 +259,6 @@
             <img src="assets/igeneratedthat.png" alt="Large SideQuest Logo">
         </div>
     </footer>
-
-    <div id="tracking-banner">
-        <p>👋 <strong>Quick note:</strong> We collect basic location data (City/Country) from visitors to better understand our audience. This helps us see which regions are watching!</p>
-        <button onclick="document.getElementById('tracking-banner').style.display = 'none'">Got it</button>
-    </div>
 
     <script>
         // Visitor Tracking
