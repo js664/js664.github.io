@@ -11,10 +11,12 @@
     <script src="https://fast.wistia.com/embed/y68xifehg6.js" async type="module"></script>
     <script src="https://fast.wistia.com/embed/gdj6tjwl63.js" async type="module"></script>
     <script src="https://fast.wistia.com/embed/ouk9udvjc2.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/88m1w3nrq1.js" async type="module"></script>
     <style>
         wistia-player[media-id='y68xifehg6']:not(:defined),
         wistia-player[media-id='gdj6tjwl63']:not(:defined),
-        wistia-player[media-id='ouk9udvjc2']:not(:defined) { 
+        wistia-player[media-id='ouk9udvjc2']:not(:defined),
+        wistia-player[media-id='88m1w3nrq1']:not(:defined) { 
             background: center / contain no-repeat;
             background-size: contain;
             display: block; 
@@ -32,6 +34,10 @@
 
         wistia-player[media-id='ouk9udvjc2']:not(:defined) {
             background-image: url('https://fast.wistia.com/embed/medias/ouk9udvjc2/swatch');
+        }
+
+        wistia-player[media-id='88m1w3nrq1']:not(:defined) {
+            background-image: url('https://fast.wistia.com/embed/medias/88m1w3nrq1/swatch');
         }
 
         * {
@@ -109,6 +115,21 @@
             display: flex;
             gap: 15px;
             justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .sub-controls {
+            width: 100%;
+            display: none;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .sub-controls button {
+            padding: 8px 20px;
+            font-size: 0.85rem;
+            border-color: #555;
         }
 
         button {
@@ -213,7 +234,12 @@
             <button onclick="switchVideo('wistia', 'ouk9udvjc2', this)">Deleted Scenes</button>
             <button class="active" onclick="switchVideo('wistia', 'gdj6tjwl63', this)">Part 1</button>
             <button onclick="switchVideo('wistia', 'y68xifehg6', this)">Part 2</button>
-            <button onclick="switchVideo('youtube', 'https://archive.org/embed/pt3_20260415', this)">Part 3</button>
+            <button onclick="switchVideo('wistia', '88m1w3nrq1', this, true)">Part 3</button>
+            
+            <div id="part3-servers" class="sub-controls">
+                <button class="active" id="btn-server1" onclick="switchPart3('server1')">Server 1 (High Quality)</button>
+                <button id="btn-server2" onclick="switchPart3('server2')">Server 2 (Archive)</button>
+            </div>
         </div>
 
         <div id="terms" class="legal-section">
@@ -257,24 +283,53 @@
             trackVisitor();
         })();
 
-        function switchVideo(type, source, btnElement) {
+        function switchVideo(type, source, btnElement, isPart3 = false) {
             const wrapper = document.getElementById('video-wrapper');
+            const subControls = document.getElementById('part3-servers');
             
-            if (type === 'wistia') {
-                wrapper.innerHTML = `<wistia-player media-id="${source}" aspect="1.7777777777777777"></wistia-player>`;
+            if (isPart3) {
+                subControls.style.display = 'flex';
+                // Reset to Server 1 when Part 3 is clicked
+                switchPart3('server1');
+            } else {
+                subControls.style.display = 'none';
+                if (type === 'wistia') {
+                    wrapper.innerHTML = `<wistia-player media-id="${source}" aspect="1.7777777777777777"></wistia-player>`;
+                } else {
+                    wrapper.innerHTML = `
+                        <iframe id="main-player" 
+                                src="${source}" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>`;
+                }
+            }
+            
+            // Update button active states for main parts
+            const buttons = document.querySelectorAll('.controls > button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+        }
+
+        function switchPart3(server) {
+            const wrapper = document.getElementById('video-wrapper');
+            const s1 = document.getElementById('btn-server1');
+            const s2 = document.getElementById('btn-server2');
+
+            if (server === 'server1') {
+                wrapper.innerHTML = `<wistia-player media-id="88m1w3nrq1" aspect="1.7777777777777777"></wistia-player>`;
+                s1.classList.add('active');
+                s2.classList.remove('active');
             } else {
                 wrapper.innerHTML = `
                     <iframe id="main-player" 
-                            src="${source}" 
+                            src="https://archive.org/embed/pt3_20260415" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
                     </iframe>`;
+                s2.classList.add('active');
+                s1.classList.remove('active');
             }
-            
-            // Update button active states
-            const buttons = document.querySelectorAll('.controls button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
         }
     </script>
 
