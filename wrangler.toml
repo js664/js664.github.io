@@ -1,0 +1,8 @@
+# wrangled.toml
+name = "sidequest-tracker"
+main = "worker.js"
+compatibility_date = "2026-04-16"
+
+# No build command needed for a simple JS worker
+[build]
+command = ""
