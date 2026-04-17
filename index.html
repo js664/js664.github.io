@@ -228,13 +228,12 @@
             text-align: center;
             color: #fff;
             padding: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        #maintenance-overlay img {
-            max-width: 100%;
-            height: auto;
+        #maintenance-overlay dotlottie-player {
             margin-bottom: 30px;
-            border-radius: 8px;
+            animation: float 3s ease-in-out infinite;
         }
 
         #maintenance-overlay h1 {
@@ -242,19 +241,37 @@
             margin-bottom: 15px;
             color: #007BFF;
             text-transform: uppercase;
+            animation: pulse 2s infinite;
         }
 
         #maintenance-overlay p {
             font-size: 1.2rem;
             color: #ccc;
         }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
     </style>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
 
     <div id="maintenance-overlay">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpiazRwZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKD5lJSUu6JvJv2/giphy.gif" alt="Site Under Construction">
-        <h1>File hosting maintenance</h1>
+        <dotlottie-player src="assets/site%20under%20construction.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        <h1>Website under maintenence</h1>
         <p>Check back soon!</p>
     </div>
 
