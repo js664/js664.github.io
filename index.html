@@ -64,20 +64,13 @@
         animation: arrive 650ms cubic-bezier(.2,.8,.2,1) both;
       }
       .mark {
-        display: grid;
-        width: 56px;
-        height: 56px;
+        width: 72px;
+        height: 72px;
         margin: 0 auto 30px;
-        place-items: center;
-        border: 1px solid #d8e7f733;
         border-radius: 16px;
-        background: linear-gradient(145deg, #d8e7f71c, #d8e7f706);
-        color: #e4edf7;
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: -.06em;
-        box-shadow: inset 0 1px #ffffff19, 0 8px 22px #0003;
+        overflow: hidden;
       }
+      .mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
       h1 {
         margin: 0 0 26px;
         font-family: Georgia, "Times New Roman", serif;
@@ -233,7 +226,7 @@
   </head>
   <body>
     <main>
-      <div class="mark" aria-hidden="true">CR</div>
+      <div class="mark" aria-hidden="true"><img src="assets/cijferreveal-favicon.png" width="72" height="72" alt="" /></div>
       <h1>CijferReveal<br />Pack Opening</h1>
       <p class="provider-intro">Voor SOMtoday en Magister.</p>
       <a class="repo-link download-link store-button" href="https://chromewebstore.google.com/detail/cijferreveal-voor-somtoda/jkeojbochgppoajlapjbhhhckcciojgj" target="_blank" rel="noopener noreferrer">
@@ -263,7 +256,7 @@
           <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
           <span>Download ZIP</span>
         </span>
-        <span class="download-version" aria-label="Versie v__EXTENSION_VERSION__">v__EXTENSION_VERSION__</span>
+        <span class="download-version" aria-label="Versie v0.2.8">v0.2.8</span>
         <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
       </button>
         <div class="download-options" id="download-options" role="group" aria-label="Kies je schoolomgeving" inert>
