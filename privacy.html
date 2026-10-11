@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10151c" />
+    <title>Privacy — CijferReveal</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding: 36px 24px; background: #10151c; color: #f3f6fa; font: 16px/1.75 system-ui, sans-serif; }
+      main { max-width: 680px; margin: auto; }
+      h1 { font: 600 clamp(36px, 7vw, 48px)/1.15 Georgia, serif; margin: 28px 0 12px; }
+      h2 { font-size: 21px; margin-top: 32px; }
+      p { color: #bac4cf; }
+      a { color: #a9c9ed; text-underline-offset: 4px; }
+      a:focus-visible { outline: 3px solid #a9c9ed; outline-offset: 4px; }
+      .date { font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="./">Terug naar de downloadpagina</a>
+      <h1>Privacy van CijferReveal</h1>
+      <p class="date">Bijgewerkt op 11 oktober 2026 · Ontwikkelaar: <a href="https://github.com/js664">js664</a></p>
+      <p>CijferReveal gebruikt je SOMtoday- of Magister-resultaten om cijfers met een animatie te openen en in je inventaris te tonen. De extensie verandert je echte cijfers niet.</p>
+      <p>Deze verklaring geldt voor de universele <a href="https://chromewebstore.google.com/detail/cijferreveal-voor-somtoda/jkeojbochgppoajlapjbhhhckcciojgj">Chrome Web Store-extensie voor SOMtoday en Magister</a>, de Firefox-versie voor SOMtoday en de afzonderlijke handmatig te installeren ZIP-versies. Hieronder staan de verschillen in gegevensverwerking en updates.</p>
+      <h2>Welke gegevens worden verwerkt en bewaard?</h2>
+      <p>De extensie verwerkt resultaten uit SOMtoday of Magister: het cijfer of de letter, het vak, de toetsomschrijving, de datum en de weging, voor zover de schoolomgeving die levert. Ook resultaten die je nog niet hebt geopend kunnen lokaal worden bewaard. Verder bewaart de extensie welke cijfers je hebt geopend, de inventaris, instellingen en technische gegevens zoals het moment waarop een resultaat is gevonden of geopend.</p>
+      <p>Om resultaten en accounts uit elkaar te houden gebruikt de extensie bron-id's en lokale codes die met een willekeurige extra waarde worden gemaakt. De lokale codes bevatten geen namen, maar kunnen wel aan resultaten worden gekoppeld en zijn daarom gevoelig. Deze opgeslagen gegevens blijven op jouw apparaat; de extensie gebruikt geen cloudsynchronisatie en stuurt ze niet naar de maker.</p>
+      <h2>Toegang tot schoolomgevingen</h2>
+      <p>Bij SOMtoday leest CijferReveal passende antwoorden die de schoolwebsite zelf ophaalt en de bijbehorende cijferweergave. De extensie vraagt geen extra SOMtoday-cijfers op en leest of bewaart geen SOMtoday-wachtwoorden, cookies of inlogtokens.</p>
+      <p>Bij Magister leest de extensie het adres van je schoolomgeving, een persoons-id uit een cijferaanvraag en de Authorization-header waarmee Magister die aanvraag uitvoert. Hiermee vraagt de extensie maximaal 25 recente cijfers op bij dezelfde Magister-schoolomgeving, via HTTPS. Het persoons-id en de Authorization-header blijven tijdelijk in het geheugen van de achtergrondextensie, apart per tabblad en schoolomgeving. Ze worden niet naar GitHub of de maker gestuurd en niet in lokale opslag of debuglogs gezet. De sessie wordt onder meer gewist bij het sluiten van het tabblad, een nieuwe navigatie naar Magister of een gedetecteerde terugkeer naar het inlogscherm.</p>
+      <p>De universele Chrome-extensie vraagt toegang tot leerling.somtoday.nl en Magister-schoolomgevingen, lokale opslag voor resultaten en instellingen, en toegang tot aanvraaggegevens voor de Magister-koppeling. De afzonderlijke versies vragen toegang voor hun eigen schoolomgeving. CijferReveal leest geen algemene browsergeschiedenis; verwerking van pagina-adressen, aanvragen en gebruikershandelingen is beperkt tot de ondersteunde schoolomgevingen en de functies van de extensie.</p>
+      <h2>Privacycategorieën in de Chrome Web Store</h2>
+      <p>De winkel vermeldt persoonsgegevens, authenticatiegegevens, webgeschiedenis, gebruikersactiviteit en website-inhoud. Dit beschrijft ook gegevens die alleen lokaal worden verwerkt. Het gaat hier om account- en resultaat-id's, de tijdelijke Magister-authenticatieheader, relevante schoolpagina-adressen en aanvragen, handelingen zoals het openen van cijfers, en de cijferinhoud. Deze categorieën betekenen niet dat de maker je cijfers of algemene surfgedrag ontvangt.</p>
+      <h2>Technische logs</h2>
+      <p>Voor Magister worden maximaal 1500 technische gebeurtenissen lokaal bewaard, ook als het debugpaneel verborgen is. Oudere gebeurtenissen worden vervangen door nieuwe. De logs bevatten tijdstippen, aantallen, fouttypen, HTTP-statussen en technische stappen, maar geen cijferwaarden, vaknamen, leerlingnummers, cookies of tokens. Een logexport maakt een lokaal TXT-bestand. De extensie verstuurt dit bestand niet; delen doe je zelf.</p>
+      <h2>Updates en andere online diensten</h2>
+      <p>De universele Chrome Web Store-versie v0.3.1 controleert niet bij GitHub op updates. Chrome verzorgt winkelupdates via de browser. Voor de Firefox-winkelversie verzorgt Firefox de winkelupdates. Google en Mozilla verwerken gegevens voor hun eigen winkel- en updatediensten volgens hun <a href="https://policies.google.com/privacy">Google-privacybeleid</a> en <a href="https://www.mozilla.org/privacy/firefox/">Firefox-privacybeleid</a>.</p>
+      <p>De afzonderlijke ZIP-versies v0.2.8 controleren via de officiële GitHub-API het nieuwste versienummer en de releaselink. Je cijfers, accountgegevens, cookies en pagina-adres gaan niet mee. GitHub kan wel je IP-adres en technische aanvraaggegevens zien. Deze controle downloadt of voert geen nieuwe code uit. Updategegevens worden lokaal bewaard; na een uur zijn ze verouderd en kan bij een volgend bezoek opnieuw worden gecontroleerd.</p>
+      <p>De website staat op GitHub Pages. Er staan geen advertenties of bezoekmeettools van de maker op en de site laadt geen externe lettertypen. GitHub kan technische bezoekgegevens verwerken. Lees zijn <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">privacyverklaring</a>.</p>
+      <h2>Gebruik, bewaartermijn en verwijderen</h2>
+      <p>CijferReveal gebruikt gegevens uitsluitend voor de zichtbare functies, zoals cijferanimaties, inventaris, instellingen en het oplossen van technische problemen. De maker ontvangt geen automatische exports van cijfers of logs. Gegevens worden niet verkocht en niet gebruikt voor advertenties. CijferReveal volgt het Chrome Web Store User Data Policy, inclusief de Limited Use-vereisten: gebruik en overdracht blijven beperkt tot de toegestane doelen, zonder gebruik voor gepersonaliseerde advertenties of inzage door de maker buiten vrijwillig gedeelde supportinformatie.</p>
+      <p>Lokaal opgeslagen resultaten, koppelingen en instellingen hebben geen automatische vervaldatum. Ze blijven bewaard totdat je ze wist of de extensie verwijdert. De begrensde debuglogs blijven ook na herladen bewaard. Tijdelijke Magister-sessiegegevens worden niet op schijf opgeslagen.</p>
+      <p>Met <strong>Reset extensie</strong> wis je de inventaris, zet je instellingen terug en kun je cijfers opnieuw openen. Eerder waargenomen cijfergegevens en lokale koppelingen blijven bewaard. Reset wist ook de debuglogs en eventuele updatecache niet. Verwijder de extensie via je browser om alle door die installatie opgeslagen extensiegegevens te wissen. Elke afzonderlijke installatie heeft eigen opslag. Je echte SOMtoday- en Magister-gegevens veranderen hierdoor niet.</p>
+      <h2>Contact</h2>
+      <p>Heb je een privacyvraag? Mail <a href="mailto:jsvdb.dev@gmail.com">jsvdb.dev@gmail.com</a> of stel een vraag via <a href="https://github.com/js664/CijferReveal/issues">GitHub</a>. GitHub-issues zijn openbaar. Deel geen cijfers, persoonsgegevens of inloggegevens. Als je zelf een bericht of logbestand deelt, ontvangt de maker de inhoud daarvan om je vraag te beantwoorden; de gebruikte mail- of supportdienst verwerkt het bericht volgens zijn eigen voorwaarden.</p>
+    </main>
+  </body>
+</html>

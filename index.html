@@ -1,396 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access the complete sidequest drew epstein collection, including all free episodes, deleted scenes, and the full Little St. James investigation in this independent media archive.">
-    <meta name="keywords" content="sidequest drew, sidequest epstein, sidequest free episode, sidequest little st james, sidequest documentary archive">
-    <meta name="google-site-verification" content="e4lWP89ZrtS7BZzE3OGB8ZiC5y5_FbaqvBS4MIBnb1Y" />
-    <link rel="icon" type="image/png" href="assets/igeneratedthat.png">
-    <title>SideQuest Drew: Complete Documentary Archive</title>
-    <script src="https://fast.wistia.com/player.js" async></script>
-    <script src="https://fast.wistia.com/embed/y68xifehg6.js" async type="module"></script>
-    <script src="https://fast.wistia.com/embed/gdj6tjwl63.js" async type="module"></script>
-    <script src="https://fast.wistia.com/embed/ouk9udvjc2.js" async type="module"></script>
-    <script src="https://fast.wistia.com/embed/88m1w3nrq1.js" async type="module"></script>
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10151c" />
+    <meta name="description" content="Download CijferReveal voor SOMtoday en Magister." />
+    <title>CijferReveal</title>
     <style>
-        /* Hide everything by default for maintenance */
-        header, main, footer {
-            display: none !important;
-        }
-
-        wistia-player[media-id='y68xifehg6']:not(:defined),
-        wistia-player[media-id='gdj6tjwl63']:not(:defined),
-        wistia-player[media-id='ouk9udvjc2']:not(:defined),
-        wistia-player[media-id='88m1w3nrq1']:not(:defined) { 
-            background: center / contain no-repeat;
-            background-size: contain;
-            display: block; 
-            filter: blur(5px); 
-            padding-top:56.25%; 
-        }
-
-        wistia-player[media-id='y68xifehg6']:not(:defined) {
-            background-image: url('https://fast.wistia.com/embed/medias/y68xifehg6/swatch');
-        }
-
-        wistia-player[media-id='gdj6tjwl63']:not(:defined) {
-            background-image: url('https://fast.wistia.com/embed/medias/gdj6tjwl63/swatch');
-        }
-
-        wistia-player[media-id='ouk9udvjc2']:not(:defined) {
-            background-image: url('https://fast.wistia.com/embed/medias/ouk9udvjc2/swatch');
-        }
-
-        wistia-player[media-id='88m1w3nrq1']:not(:defined) {
-            background-image: url('https://fast.wistia.com/embed/medias/88m1w3nrq1/swatch');
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Top Bar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background-color: #0a0a0a;
-            border-bottom: 2px solid #007BFF;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .nav-links a {
-            color: #cccccc;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #007BFF;
-        }
-
-        /* Main Content */
-        main {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Video Player */
-        .video-container {
-            width: 100%;
-            aspect-ratio: 16/9;
-            background-color: #111;
-            border: 1px solid #222;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        iframe, wistia-player {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Part Selector */
-        .controls {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .sub-controls {
-            width: 100%;
-            display: none;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .sub-controls button {
-            padding: 8px 20px;
-            font-size: 0.85rem;
-            border-color: #555;
-        }
-
-        button {
-            background-color: #111;
-            color: #fff;
-            border: 1px solid #007BFF;
-            padding: 12px 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        button:hover {
-            background-color: #003a7a;
-        }
-
-        button.active {
-            background-color: #007BFF;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
-        }
-
-        /* Legal Sections */
-        .legal-section {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #0a0a0a;
-            border: 1px solid #222;
-            border-left: 3px solid #007BFF;
-            border-radius: 4px;
-        }
-
-        .legal-section h2 {
-            color: #007BFF;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-
-        .legal-section p {
-            color: #cccccc;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        /* Mobile tweaks */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-            .nav-links a {
-                margin: 0 10px;
-            }
-            .controls {
-                flex-direction: column;
-            }
-        }
-
-        /* Large Bottom Logo */
-        footer {
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .bottom-logo img {
-            max-width: 100%;
-            height: auto;
-            width: 800px; /* Large scale */
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .bottom-logo img:hover {
-            opacity: 1;
-        }
-
-        /* Maintenance Overlay */
-        #maintenance-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            padding: 20px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        #maintenance-overlay dotlottie-player {
-            margin-bottom: 30px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        #maintenance-overlay h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #007BFF;
-            text-transform: uppercase;
-            animation: pulse 2s infinite;
-        }
-
-        #maintenance-overlay p {
-            font-size: 1.2rem;
-            color: #ccc;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
+      :root {
+        color-scheme: dark;
+        --ink: #f3f6fa;
+        --muted: #bac4cf;
+        --blue: #a9c9ed;
+        --surface: #171e27;
+        --line: #ffffff25;
+      }
+      * { box-sizing: border-box; }
+      html { min-width: 320px; min-height: 100%; background: #0b0f14; }
+      body {
+        min-height: 100svh;
+        margin: 0;
+        display: grid;
+        place-items: center;
+        padding: 28px;
+        overflow-x: hidden;
+        color: var(--ink);
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(ellipse at 50% 40%, #27374a65 0, transparent 48%),
+          linear-gradient(145deg, #11171f, #090c11 72%);
+      }
+      body::before, body::after {
+        position: fixed;
+        z-index: 0;
+        width: min(38vw, 440px);
+        aspect-ratio: 1;
+        border: 1px solid #cfdef10b;
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+      body::before { top: -24%; left: -14%; box-shadow: 0 0 0 42px #cfdef106, 0 0 0 84px #cfdef104; }
+      body::after { right: -18%; bottom: -33%; width: min(48vw, 560px); box-shadow: 0 0 0 48px #cfdef105; }
+      main {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 500px);
+        min-width: 0;
+        padding: clamp(28px, 7vw, 54px);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: linear-gradient(155deg, #1c2530f2, #131920f5 68%);
+        box-shadow: inset 0 1px #ffffff12;
+        text-align: center;
+        animation: arrive 650ms cubic-bezier(.2,.8,.2,1) both;
+      }
+      .mark {
+        display: grid;
+        width: 56px;
+        height: 56px;
+        margin: 0 auto 30px;
+        place-items: center;
+        border: 1px solid #d8e7f733;
+        border-radius: 16px;
+        background: linear-gradient(145deg, #d8e7f71c, #d8e7f706);
+        color: #e4edf7;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -.06em;
+        box-shadow: inset 0 1px #ffffff19, 0 8px 22px #0003;
+      }
+      h1 {
+        margin: 0 0 26px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(36px, 8vw, 54px);
+        line-height: 1.04;
+        font-weight: 620;
+        letter-spacing: -.045em;
+        text-wrap: balance;
+      }
+      p {
+        max-width: 31ch;
+        margin: 18px auto 32px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+        text-wrap: pretty;
+      }
+      .repo-link, .download-link {
+        min-height: 58px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 0 18px;
+        border: 1px solid #dbe8f054;
+        border-radius: 10px;
+        background: linear-gradient(110deg, #e5edf6, #cbdced);
+        color: #111923;
+        text-align: left;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 650;
+        box-shadow: 0 9px 24px #0003, inset 0 1px #fff;
+        transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      }
+      .repo-link.download-link { min-height: 58px; border-color: #dbe8f054; background: linear-gradient(110deg, #e5edf6, #cbdced); color: #111923; font-size: 15px; font-weight: 650; box-shadow: 0 6px 14px #0003, inset 0 1px #fff; }
+      .repo-link.download-link:hover { transform: translateY(-2px); background: #f1f6fb; box-shadow: 0 8px 18px #0004, inset 0 1px #fff; }
+      .repo-link.download-link:active { transform: translateY(0); }
+      .download-link:focus-visible, .repo-link:focus-visible { outline: 3px solid #a9c9ed; outline-offset: 4px; }
+      .download-link { margin-bottom: 10px; }
+      .download-link .link-end { gap: 13px; }
+      .download-link .download-icon { width: 23px; height: 23px; }
+      .faq-link { margin-top: 10px; }
+      .download-version { display: inline-block; padding: 5px 8px; border: 1px solid #18243233; border-radius: 999px; background: #16223124; font-size: 12px; font-weight: 700; white-space: nowrap; }
+      .repo-link {
+        min-height: 52px;
+        border-color: #ffffff24;
+        background: #ffffff08;
+        color: #dce6ef;
+        font-size: 14px;
+        font-weight: 550;
+        box-shadow: none;
+      }
+      .repo-link:hover { transform: translateY(-1px); background: #ffffff11; box-shadow: none; }
+      .repo-link:active { transform: translateY(0); }
+      .link-end { display: inline-flex; align-items: center; gap: 12px; }
+      .repo-link svg { width: 22px; height: 22px; flex: none; }
+      .repo-link .arrow { width: 18px; height: 18px; opacity: .7; transition: transform 180ms ease; }
+      .repo-link:hover .arrow { transform: translate(2px, -2px); }
+      .store-button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding-block: 14px;
+        justify-content: flex-start;
+        background: #171e27;
+        border-color: #ffffff20;
+        color: #8f9ba9;
+        font-family: inherit;
+        line-height: 1.45;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+      .store-button:disabled { opacity: .78; }
+      .store-button:disabled:hover { background: #171e27; border-color: #ffffff20; transform: none; box-shadow: none; }
+      a.store-button { color: var(--ink); cursor: pointer; }
+      .store-button small { display: block; color: var(--muted); font-size: 12px; font-weight: 400; }
+      .store-button img { width: 24px; height: 24px; flex: none; object-fit: contain; }
+      .store-button.download-link small { color: #34485d; }
+      .manual-download { margin-top: 22px; text-align: left; }
+      .manual-download > summary { color: var(--muted); font-size: 13px; cursor: pointer; padding: 8px 0; }
+      .manual-download > summary:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+      .manual-download .download-chooser { margin-top: 12px; }
+      .brand-note { margin-top: 18px; color: #82909f; font-size: 11px; line-height: 1.55; text-align: left; }
+      .brand-note summary { width: fit-content; margin: 0 auto; cursor: pointer; text-underline-offset: 3px; }
+      .brand-note p { max-width: 38ch; margin: 8px auto 0; font-size: 11px; line-height: 1.55; }
+      .faq-dialog {
+        width: min(560px, calc(100% - 36px));
+        max-height: calc(100svh - 36px);
+        padding: clamp(24px, 5vw, 36px);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #171e27;
+        color: var(--ink);
+        font: inherit;
+        opacity: 0;
+        transform: translateY(12px) scale(.98);
+        transition: opacity 220ms ease, transform 220ms cubic-bezier(.22,1,.36,1);
+      }
+      .faq-dialog.is-visible { opacity: 1; transform: translateY(0) scale(1); }
+      .faq-dialog::backdrop { background: #05080dc4; opacity: 0; transition: opacity 220ms ease; }
+      .faq-dialog.is-visible::backdrop { opacity: 1; }
+      body:has(.faq-dialog[open]) { overflow: hidden; }
+      .faq-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 26px; }
+      .faq-heading h2 { margin: 0; font: 600 clamp(28px, 6vw, 38px)/1.1 Georgia, serif; letter-spacing: -.03em; text-wrap: balance; }
+      .faq-close { display: grid; place-items: center; width: 40px; height: 40px; flex: none; padding: 0; border: 1px solid var(--line); border-radius: 9px; background: #ffffff08; color: var(--ink); cursor: pointer; }
+      .faq-close:hover { background: #ffffff16; }
+      .faq-close svg { width: 20px; height: 20px; }
+      .faq-dialog summary:focus-visible, .faq-close:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+      .faq-dialog details { border-top: 1px solid var(--line); }
+      .faq-dialog summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 0; font-size: 15px; line-height: 1.5; font-weight: 600; cursor: pointer; list-style: none; }
+      .faq-dialog summary::-webkit-details-marker { display: none; }
+      .faq-dialog summary::after { content: ''; width: 8px; height: 8px; flex: none; border-right: 1.5px solid var(--blue); border-bottom: 1.5px solid var(--blue); transform: rotate(45deg); transition: transform 180ms ease; }
+      .faq-dialog details[open] summary::after { transform: rotate(225deg); }
+      .faq-dialog p { max-width: none; margin: 0 0 4px; font-size: 14px; line-height: 1.75; }
+      footer { margin-top: 26px; color: #929eac; font-size: 12px; letter-spacing: .015em; }
+      .privacy-footer { margin-top: 12px; }
+      .privacy-link { color: var(--blue); text-underline-offset: 3px; }
+      .privacy-link:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+      @keyframes arrive { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      @media (max-width: 480px) {
+        body { padding: 18px; }
+        main { padding: 34px 25px; }
+        .mark { margin-bottom: 25px; }
+        p { font-size: 15px; }
+        .repo-link, .download-link { min-height: 56px; padding-inline: 14px; font-size: 14px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      }
+      .provider-intro { margin: -8px auto 28px; font-size: 15px; }
+      .download-chooser { position: relative; isolation: isolate; margin-bottom: 10px; }
+      .download-trigger .link-end { min-width: 0; flex: 1; }
+      .download-trigger .link-end span { min-width: 0; }
+      .download-trigger .download-version { max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
+      .download-trigger { width: 100%; margin: 0; font-family: inherit; cursor: pointer; transition: filter 320ms ease, opacity 320ms ease, transform 320ms cubic-bezier(.16,1,.3,1); }
+      .download-chooser.is-open .download-trigger { filter: blur(5px); opacity: .36; transform: scale(.96); }
+      .download-options { position: absolute; inset: -5px; z-index: 2; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 8px; padding: 5px; border-radius: 12px; background: #121a24e8; box-shadow: 0 12px 26px #0005; opacity: 0; visibility: hidden; pointer-events: none; transform: scale(.84); transform-origin: center; transition: opacity 220ms ease, transform 400ms cubic-bezier(.16,1,.3,1), visibility 0s 400ms; }
+      .download-chooser.is-open .download-options { opacity: 1; visibility: visible; pointer-events: auto; transform: scale(1); transition-delay: 0s; }
+      .provider-option { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 58px; padding: 0 16px; border-radius: 8px; background: #d7e6f6; color: #111923; text-decoration: none; font-size: 15px; font-weight: 650; transition: background 140ms ease, transform 240ms cubic-bezier(.16,1,.3,1); }
+      .provider-option:nth-child(2) { background: #b6d3f1; }
+      .provider-option:hover { background: #f1f6fb; transform: translateY(-2px); }
+      .provider-option:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+      .provider-option svg { width: 20px; height: 20px; flex: none; }
+      noscript a { color: var(--blue); }
+      .provider-option small{display:block;font-size:11px;font-weight:500;line-height:1.3;margin-top:3px}
+      .prerelease-dialog h2{font:600 28px/1.2 Georgia,serif;margin:0 0 20px}
+      .prerelease-dialog p{margin-bottom:16px}
+      .warning-actions{display:flex;gap:12px;justify-content:flex-end;flex-wrap:wrap;margin-top:24px}
+      .warning-actions button,.warning-actions a{font-family:inherit;font-size:14px;font-weight:600;line-height:1.5;padding:10px 16px;border:1px solid #ffffff40;border-radius:8px;cursor:pointer;text-decoration:none;color:var(--ink);background:#ffffff08}
+      .warning-actions a{background:#d7e6f6;color:#111923;border-color:#d7e6f6}
+      .warning-actions button:focus-visible,.warning-actions a:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
     </style>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-</head>
-<body>
-
-    <div id="maintenance-overlay">
-        <dotlottie-player src="assets/site%20under%20construction.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
-        <h1>Website under maintenence</h1>
-        <p>Check back soon!</p>
-    </div>
-
-    <header>
-        <div class="logo">
-            <img src="assets/igeneratedthat.png" alt="SideQuest Logo">
-        </div>
-        <div class="nav-links">
-            <a href="#terms">Terms</a>
-            <a href="#dmca">DMCA</a>
-        </div>
-    </header>
-
+  </head>
+  <body>
     <main>
-        <div id="video-wrapper" class="video-container">
-            <!-- Defaults to Part 1 (Wistia) -->
-            <wistia-player media-id="gdj6tjwl63" aspect="1.7777777777777777"></wistia-player>
+      <div class="mark" aria-hidden="true">CR</div>
+      <h1>CijferReveal<br />Pack Opening</h1>
+      <p class="provider-intro">Voor SOMtoday en Magister.</p>
+      <a class="repo-link download-link store-button" href="https://chromewebstore.google.com/detail/cijferreveal-voor-somtoda/jkeojbochgppoajlapjbhhhckcciojgj" target="_blank" rel="noopener noreferrer">
+        <img src="assets/chrome.webp" width="24" height="24" alt="" aria-hidden="true" />
+        <span>Chrome Web Store<small>Installeer voor SOMtoday en Magister</small></span>
+      </a>
+      <a class="repo-link store-button" href="https://addons.mozilla.org/addon/pack-opening-voor-somtoday/" target="_blank" rel="noopener noreferrer">
+        <img src="assets/firefox.svg" width="24" height="24" alt="" aria-hidden="true" />
+        <span>Firefox — SOMtoday<small>Download via Mozilla Add-ons</small></span>
+      </a>
+      <a class="repo-link" href="https://github.com/js664/CijferReveal" target="_blank" rel="noopener noreferrer">
+        <span class="link-end">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.29-1.24-1.63-1.24-1.63-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.14 3.54 1.63.1-.72.39-1.2.7-1.48-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.04-1.15 3.04-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.29-2.61 5.23-5.1 5.5.4.34.75 1 .75 2.02v3c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+          <span>Bekijk broncode op GitHub</span>
+        </span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
+      <a class="repo-link faq-link" href="#faq" aria-haspopup="dialog" aria-controls="faq-dialog">
+        <span>Veelgestelde vragen</span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
+      <details class="manual-download">
+        <summary>Handmatig downloaden (ZIP)</summary>
+      <div class="download-chooser">
+      <button class="repo-link download-link download-trigger" type="button" aria-expanded="false" aria-controls="download-options">
+        <span class="link-end">
+          <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3"/></svg>
+          <span>Download ZIP</span>
+        </span>
+        <span class="download-version" aria-label="Versie v__EXTENSION_VERSION__">v__EXTENSION_VERSION__</span>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </button>
+        <div class="download-options" id="download-options" role="group" aria-label="Kies je schoolomgeving" inert>
+          <a class="provider-option" href="https://github.com/js664/CijferReveal/releases/latest/download/CijferReveal.zip"><span>SOMtoday</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m-4-4 4 4 4-4M5 18v2h14v-2"/></svg></a>
+          <a class="provider-option" href="https://github.com/js664/CijferReveal/releases/latest/download/CijferReveal-Magister.zip"><span>Magister<small>Voorlopige versie</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 4v12m-4-4 4 4 4-4M5 18v2h14v-2"/></svg></a>
         </div>
-
-        <div class="controls">
-            <button onclick="switchVideo('wistia', 'ouk9udvjc2', this)">Deleted Scenes</button>
-            <button class="active" onclick="switchVideo('wistia', 'gdj6tjwl63', this)">Part 1</button>
-            <button onclick="switchVideo('wistia', 'y68xifehg6', this)">Part 2</button>
-            <button onclick="switchVideo('wistia', '88m1w3nrq1', this, true)">Part 3</button>
-            
-            <div id="part3-servers" class="sub-controls">
-                <button class="active" id="btn-server1" onclick="switchPart3('server1')">Server 1 (High Quality)</button>
-                <button id="btn-server2" onclick="switchPart3('server2')">Server 2 (Archive)</button>
-            </div>
-        </div>
-
-        <div id="terms" class="legal-section">
-            <h2>Terms of Service</h2>
-            <p>By accessing this website, you agree to the following terms: This platform serves as a directory and user interface for content hosted on third-party services, including but not limited to Wistia and the Internet Archive. We do not host, store, or upload any video files to our own servers. All media playback is handled via external embeds. <strong>Analytics:</strong> We use aggregated, anonymous location data (City/Country) for audience analytics. No personally identifiable information or IP addresses are stored. By using this site, you affirm you are at least 18 years of age. For legal inquiries, contact <a href="mailto:legalstuffsidequest@gmail.com" style="color: #007BFF; text-decoration: none;">legalstuffsidequest@gmail.com</a>.</p>
-            <p style="margin-top: 10px;">We make no guarantees regarding the availability, accuracy, or legality of the external content linked or embedded herein. Users access this content at their own risk. We are not liable for any technical issues, data usage, or external site policies that may apply when interacting with these players.</p>
-        </div>
-
-        <div id="dmca" class="legal-section">
-            <h2>DMCA & Copyright</h2>
-            <p>This website does not host or store any media on its servers. All video content is embedded directly from third-party platforms (Wistia and the Internet Archive). If you are a copyright owner and believe your content has been used without authorization via an embed on this site, please note that the content is hosted by a third party. To permanently remove the content from the internet, you must contact the respective hosting provider (e.g., Wistia or Internet Archive) directly. We will comply with valid requests to remove the <strong>embed link</strong> from this specific interface upon receiving a formal notice at <a href="mailto:legalstuffsidequest@gmail.com" style="color: #007BFF; text-decoration: none;">legalstuffsidequest@gmail.com</a>.</p>
-        </div>
+      </div>
+        <noscript><p><a href="https://github.com/js664/CijferReveal/releases/latest/download/CijferReveal.zip">Download SOMtoday</a> · <a href="https://github.com/js664/CijferReveal/releases/latest">Download Magister — voorlopige versie</a></p></noscript>
+      </details>
+      <details class="brand-note">
+        <summary>Merkinformatie</summary>
+        <p>Chrome is een merk van Google. Firefox is een merk van Mozilla Foundation. CijferReveal staat los van beide.</p>
+      </details>
+      <footer class="privacy-footer"><a class="privacy-link" href="privacy.html">Privacy</a></footer>
     </main>
-
-    <footer>
-        <div class="bottom-logo">
-            <img src="assets/igeneratedthat.png" alt="Large SideQuest Logo">
-        </div>
-    </footer>
-
-    <script>
-        // Privacy-Friendly Tracking
-        (function() {
-            const WORKER_URL = 'https://sidequest-tracker.jsvdbeukel.workers.dev';
-            
-            async function trackVisitor() {
-                try {
-                    // Just a ping to the worker - no personal data sent from here
-                    await fetch(WORKER_URL, {
-                        method: 'POST'
-                    });
-                } catch (e) {}
-            }
-            trackVisitor();
-        })();
-
-        function switchVideo(type, source, btnElement, isPart3 = false) {
-            const wrapper = document.getElementById('video-wrapper');
-            const subControls = document.getElementById('part3-servers');
-            
-            if (isPart3) {
-                subControls.style.display = 'flex';
-                // Reset to Server 1 when Part 3 is clicked
-                switchPart3('server1');
-            } else {
-                subControls.style.display = 'none';
-                if (type === 'wistia') {
-                    wrapper.innerHTML = `<wistia-player media-id="${source}" aspect="1.7777777777777777"></wistia-player>`;
-                } else {
-                    wrapper.innerHTML = `
-                        <iframe id="main-player" 
-                                src="${source}" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>`;
-                }
-            }
-            
-            // Update button active states for main parts
-            const buttons = document.querySelectorAll('.controls > button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
-        }
-
-        function switchPart3(server) {
-            const wrapper = document.getElementById('video-wrapper');
-            const s1 = document.getElementById('btn-server1');
-            const s2 = document.getElementById('btn-server2');
-
-            if (server === 'server1') {
-                wrapper.innerHTML = `<wistia-player media-id="88m1w3nrq1" aspect="1.7777777777777777"></wistia-player>`;
-                s1.classList.add('active');
-                s2.classList.remove('active');
-            } else {
-                wrapper.innerHTML = `
-                    <iframe id="main-player" 
-                            src="https://archive.org/embed/pt3_20260415" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>`;
-                s2.classList.add('active');
-                s1.classList.remove('active');
-            }
-        }
-    </script>
-
-</body>
+    <dialog class="faq-dialog" id="faq-dialog" aria-labelledby="faq-title">
+      <div class="faq-heading">
+        <h2 id="faq-title">Veelgestelde vragen</h2>
+        <button class="faq-close" type="button" aria-label="FAQ sluiten" autofocus>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+      <details>
+        <summary>Ik zie geen draaiende animatie. Wat kan ik doen?</summary>
+        <p>Zet in Windows <strong>Animatie-effecten</strong> aan via <strong>Instellingen → Toegankelijkheid → Visuele effecten</strong>. Herlaad daarna SOMtoday of Magister.</p>
+      </details>
+      <details>
+        <summary>Is CijferReveal beschikbaar via Mozilla Add-ons?</summary>
+        <p>De SOMtoday-versie is beschikbaar via de Firefox-knop op deze pagina. De Magister-versie is nog niet beschikbaar via Mozilla Add-ons.</p>
+      </details>
+      <details>
+        <summary>Is CijferReveal beschikbaar in de Chrome Web Store?</summary>
+        <p>Ja! De universele CijferReveal-extensie voor SOMtoday en Magister is beschikbaar via de Chrome-knop bovenaan deze pagina.</p>
+      </details>
+    </dialog>
+    <dialog class="faq-dialog prerelease-dialog" id="magister-warning" aria-labelledby="magister-warning-title">
+      <h2 id="magister-warning-title">Magister — voorlopige versie</h2>
+      <p>Deze versie is nog in testfase. Er kunnen fouten optreden, ook bij het inloggen. De loginfix is getest, maar andere schoolomgevingen kunnen anders reageren.</p>
+      <p>Werkt Magister niet goed? Zet de extensie uit en herlaad Magister. Kies SOMtoday als je geen Magister gebruikt.</p>
+      <div class="warning-actions"><button type="button" class="warning-cancel">Annuleren</button><a class="warning-download" href="https://github.com/js664/CijferReveal/releases/latest/download/CijferReveal-Magister.zip">Toch downloaden</a></div>
+    </dialog>
+    <script src="download.js" defer></script>
+    <script src="faq.js" defer></script>
+  </body>
 </html>
